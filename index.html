@@ -12,7 +12,7 @@
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            font-family: Georgia, serif;
         }
 
         .tile {
@@ -27,9 +27,9 @@
             cursor: pointer;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-            font-family: 'Snell Roundhand', cursive; /* This will give a fancy handwriting style. Replace with the name of any fancy font you want to use. */
+            font-family: 'Snell Roundhand', cursive; 
 
-            font-size: 40px; /* This will make the font bigger. Adjust the value as needed. */
+            font-size: 40px; 
         }
 
         .box {
@@ -80,7 +80,7 @@
 
         .container {
             width: auto;
-            max-height: calc(100vh - 40px);
+            max-height: calc(100vh - 160px);
             overflow-y: auto;
             padding: 20px;
             box-sizing: border-box;
@@ -154,9 +154,6 @@
             font-size: 24px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
         }
-
-
-
     </style>
     <script>
         function loadPage(name) {
@@ -218,12 +215,9 @@
                 }
             }
         };
-
-       
-
-
     </script>
 </head>
+
 <body>
     <div id="mainPage" class="page">
         <div class="text-bubble">Sana ❤️ Moiez</div>
@@ -243,11 +237,10 @@
             <div id="HoodieGallery" class="box" style="display: none;">
                 <h2>Hoodie/Sweater</h2>
                 <div class="gallery">
-                    <img src="hoodie1.png" alt="Hoodie 1">
-                    <img src="hoodie2.png" alt="Hoodie 2" style="display: none;">
-                    <img src="hoodie3.png" alt="Hoodie 3" style="display: none;">
-                    <img src="hoodie4.png" alt="Hoodie 4" style="display: none;">
-                    <!-- Add more images here -->
+                    <img src="Moiez/Hoodie/hoodie1.png" alt="Hoodie 1">
+                    <img src="Moiez/Hoodie/hoodie2.png" alt="Hoodie 2" style="display: none;">
+                    <img src="Moiez/Hoodie/hoodie3.png" alt="Hoodie 3" style="display: none;">
+                    <img src="Moiez/Hoodie/hoodie4.png" alt="Hoodie 4" style="display: none;">
                     <button class="arrow left" onclick="changeImage('HoodieGallery', -1)">←</button>
                     <button class="arrow right" onclick="changeImage('HoodieGallery', 1)">→</button>
                 </div>
@@ -256,41 +249,153 @@
             <div id="ShirtGallery" class="box" style="display: none;">
                 <h2>Shirt</h2>
                 <div class="gallery">
-                    <img src="shirt1.png" alt="Shirt 1">
-                    <img src="shirt2.png" alt="Shirt 2">
+                    <img src="Moiez/Shirt/shirt1.png" alt="Shirt 1">
+                    <img src="Moiez/Shirt/shirt2.png" alt="Shirt 2">
                     <button class="arrow left" onclick="changeImage('ShirtGallery', -1)">←</button>
                     <button class="arrow right" onclick="changeImage('ShirtGallery', 1)">→</button>
-
-                    <!-- Add more images here -->
                 </div>
             </div>
             <div id="PantsGallery" class="box" style="display: none;">
                 <h2>Pants</h2>
                 <div class="gallery">
-                    <img src="pants1.png" alt="Pants 1">
-                    <img src="pants2.png" alt="Pants 2">
+                    <img src="Moiez/Pant/pants1.png" alt="Pants 1">
+                    <img src="Moiez/Pant/pants2.png" alt="Pants 2">
                     <button class="arrow left" onclick="changeImage('PantsGallery', -1)">←</button>
                     <button class="arrow right" onclick="changeImage('PantsGallery', 1)">→</button>
-
-                    <!-- Add more images here -->
                 </div>      
             </div>
             <div id="ShoesGallery" class="box" style="display: none;">
                 <h2>Shoes</h2>
                 <div class="gallery">
-                    <img src="shoes1.png" alt="Shoes 1">
-                    <img src="shoes2.png" alt="Shoes 2">
+                    <img src="Moiez/Shoe/shoes1.png" alt="Shoes 1">
+                    <img src="Moiez/Shoe/shoes2.png" alt="Shoes 2">
+                    <img src="Moiez/Shoe/shoes3.png" alt="Shoes 3">
                     <button class="arrow left" onclick="changeImage('ShoesGallery', -1)">←</button>
                     <button class="arrow right" onclick="changeImage('ShoesGallery', 1)">→</button>
-
-                    <!-- Add more images here -->
                 </div>  
             </div>
         </div>
     </div>
-    <!-- Add other pages here -->
-    
-    <!-- Add other pages here -->
+
+    <div id="SanaPage" class="page" style="display: none;">
+        <div class="text-bubble">Sana ❤️ Moiez</div>
+
+        <div class="back-arrow" onclick="loadPage('main')">&#8592;</div>
+        <div class="container">
+            <div class="tile" style="height: 50px; font-size: 20px;" onclick="loadPage('SanaJewelry')">Sana Jewelry →</div>
+            <h1>Sana</h1>
+            <input type="checkbox" id="Scarf_sana_Checkbox" onclick="toggleGallery('Scarf_sana_')"> Scarf<br>
+            <input type="checkbox" id="Hoodie_sana_Checkbox" onclick="toggleGallery('Hoodie_sana_')"> Hoodie/Sweater<br>
+            <input type="checkbox" id="Shirt_sana_Checkbox" onclick="toggleGallery('Shirt_sana_')"> Shirt<br>
+            <input type="checkbox" id="Pants_sana_Checkbox" onclick="toggleGallery('Pants_sana_')"> Pants<br>
+            <input type="checkbox" id="Mid_Dresses_sana_Checkbox" onclick="toggleGallery('Mid_Dresses_sana_')"> Mid Length Dresses<br>
+            <input type="checkbox" id="Full_Dresses_sana_Checkbox" onclick="toggleGallery('Full_Dresses_sana_')"> Full Length Dresses/Abayas<br>
+            <!-- <input type="checkbox" id="Shoes_sana_Checkbox" onclick="toggleGallery('Shoes_sana_')"> Shoes<br> -->
+            <div id="Scarf_sana_Gallery" class="box" style="display: none;">
+                <h2>Scarf</h2>
+                <div class="gallery">
+                    <img src="Sana/Scarf/scarf1.png" alt="Scarf 1">
+                    <button class="arrow left" onclick="changeImage('Hoodie_sana_Gallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('Hoodie_sana_Gallery', 1)">→</button>
+                </div>
+            </div>
+            <div id="Hoodie_sana_Gallery" class="box" style="display: none;">
+                <h2>Hoodie/Sweater/Cardigans</h2>
+                <div class="gallery">
+                    <img src="Sana/Hoodie/hoodie1.png" alt="Hoodie 1">
+                    <img src="Sana/Hoodie/hoodie2.png" alt="Hoodie 2" style="display: none;">
+                    <img src="Sana/Hoodie/hoodie3.png" alt="Hoodie 3" style="display: none;">
+                    <img src="Sana/Hoodie/hoodie4.png" alt="Hoodie 4" style="display: none;">
+                    <button class="arrow left" onclick="changeImage('Hoodie_sana_Gallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('Hoodie_sana_Gallery', 1)">→</button>
+                </div>
+            </div>
+            
+            <div id="Shirt_sana_Gallery" class="box" style="display: none;">
+                <h2>Shirt/Top</h2>
+                <div class="gallery">
+                    <img src="Sana/Shirt/shirt1.png" alt="Shirt 1">
+                    <img src="Sana/Shirt/shirt2.png" alt="Shirt 2">
+                    <button class="arrow left" onclick="changeImage('Shirt_sana_Gallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('Shirt_sana_Gallery', 1)">→</button>
+                </div>
+            </div>
+            <div id="Pants_sana_Gallery" class="box" style="display: none;">
+                <h2>Bottom</h2>
+                <div class="gallery">
+                    <img src="Sana/Pant/pants1.png" alt="Pants 1">
+                    <img src="Sana/Pant/pants2.png" alt="Pants 2">
+                    <button class="arrow left" onclick="changeImage('Pants_sana_Gallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('Pants_sana_Gallery', 1)">→</button>
+                </div>      
+            </div>
+            <div id="Mid_Dresses_sana_Gallery" class="box" style="display: none;">
+                <h2>Mid Length Dress</h2>
+                <div class="gallery">
+                    <img src="Sana/Mdress/mdress1.png" alt="M Dress 1">
+                    <button class="arrow left" onclick="changeImage('Mid_Dresses_sana_Gallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('Mid_Dresses_sana_Gallery', 1)">→</button>
+                </div>      
+            </div>
+            <div id="Full_Dresses_sana_Gallery" class="box" style="display: none;">
+                <h2>Full Length Dress/Abaya</h2>
+                <div class="gallery">
+                    <img src="Sana/Fdress/fdress1.png" alt="F Dress 1">
+                    <img src="Sana/Fdress/fdress2.png" alt="F Dress 2">
+                    <button class="arrow left" onclick="changeImage('Full_Dresses_sana_Gallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('Full_Dresses_sana_Gallery', 1)">→</button>
+                </div>      
+            </div>
+            <!-- <div id="Shoes_sana_Gallery" class="box" style="display: none;">
+                <h2>Shoes</h2>
+                <div class="gallery">
+                    <img src="Sana/Shoe/shoes1.png" alt="Shoes 1">
+                    <img src="Sana/Shoe/shoes2.png" alt="Shoes 2">
+                    <img src="Sana/Shoe/shoes3.png" alt="Shoes 3">
+                    <button class="arrow left" onclick="changeImage('Shoes_sana_Gallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('Shoes_sana_Gallery', 1)">→</button>
+                </div>  
+            </div> -->
+        </div>
+    </div>
+
+    <div id="SanaJewelryPage" class="page" style="display: none;">
+        <div class="text-bubble">Sana ❤️ Moiez</div>
+
+        <div class="back-arrow" onclick="loadPage('Sana')">&#8592;</div>
+        <div class="container">
+            <h1>Sana Jewelry</h1>
+            <input type="checkbox" id="Earring_sana_Checkbox" onclick="toggleGallery('Earring_sana_')"> Earrings<br>
+            <input type="checkbox" id="Necklace_sana_Checkbox" onclick="toggleGallery('Necklace_sana_')"> Necklace<br>
+            <input type="checkbox" id="Ring_sana_Checkbox" onclick="toggleGallery('Ring_sana_')"> Ring<br>
+
+            <div id="Earring_sana_Gallery" class="box" style="display: none;">
+                <h2>Earring</h2>
+                <div class="gallery">
+                    <img src="Sana/Jewelry/Earring/earring1.png" alt="Earring 1">
+                    <button class="arrow left" onclick="changeImage('Earring_sana_Gallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('Earring_sana_Gallery', 1)">→</button>
+                </div>
+            </div>
+            <div id="Necklace_sana_Gallery" class="box" style="display: none;">
+                <h2>Necklace</h2>
+                <div class="gallery">
+                    <img src="Sana/Jewelry/Necklace/necklace1.png" alt="Necklace 1">
+                    <button class="arrow left" onclick="changeImage('Necklace_sana_Gallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('Necklace_sana_Gallery', 1)">→</button>
+                </div>
+            </div>
+            
+            <div id="Ring_sana_Gallery" class="box" style="display: none;">
+                <h2>Ring</h2>
+                <div class="gallery">
+                    <img src="Sana/Jewelry/Ring/ring1.png" alt="Ring 1">
+                    <button class="arrow left" onclick="changeImage('Ring_sana_Gallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('Ring_sana_Gallery', 1)">→</button>
+                </div>
+            </div>        
+        </div>
+    </div>
     
 </body>
 </html>
