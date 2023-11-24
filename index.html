@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Website</title>
+    <title>S&M Forever</title>
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+
     <style>
         body {
             display: flex;
@@ -74,15 +76,7 @@
             top: 50%;
             transform: translate(-50%, -50%);
         }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
+       
 
         .container {
             width: auto;
@@ -143,12 +137,24 @@
             right: 10px;
         }
         h2{
-            /* make text center */
             text-align: center;
             padding-top: 10px;
             margin: 0;
             font-size: 15px
         }
+        .text-bubble {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 20px;
+            font-family: 'Jazz LET', fantasy;
+            font-size: 24px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
 
 
     </style>
@@ -220,10 +226,13 @@
 </head>
 <body>
     <div id="mainPage" class="page">
+        <div class="text-bubble">Sana ❤️ Moiez</div>
         <div class="tile" onclick="loadPage('Moiez')">Moiez</div>
         <div class="tile" onclick="loadPage('Sana')">Sana</div>
     </div>
     <div id="MoiezPage" class="page" style="display: none;">
+        <div class="text-bubble">Sana ❤️ Moiez</div>
+
         <div class="back-arrow" onclick="loadPage('main')">&#8592;</div>
         <div class="container">
             <h1>Moiez</h1>
