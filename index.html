@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .tile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            background-color: #009578;
+            color: #ffffff;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            font-family: 'Snell Roundhand', cursive; /* This will give a fancy handwriting style. Replace with the name of any fancy font you want to use. */
+
+            font-size: 40px; /* This will make the font bigger. Adjust the value as needed. */
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 225px;
+            margin: 10px;
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        input[type="checkbox"] {
+            appearance: none;
+            background-color: #f2f2f2;
+            border: 2px solid #c0c0c0;
+            border-radius: 4px;
+            display: inline-block;
+            position: relative;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: #009578;
+            border-color: #009578;
+        }
+
+        input[type="checkbox"]:checked::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            background-color: #ffffff;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: auto;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .gallery {
+            margin-left:50px;
+            position: relative;
+            width: 200px; /* Adjust this value as needed */
+            height: 200px; /* Adjust this value as needed */
+            overflow: hidden;
+        }
+
+        .gallery img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: auto;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #000000;
+            font-size: 20px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+        h2{
+            /* make text center */
+            text-align: center;
+            padding-top: 10px;
+            margin: 0;
+            font-size: 15px
+        }
+
+
+    </style>
+    <script>
+        function loadPage(name) {
+            // Hide all pages
+            var pages = document.getElementsByClassName('page');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = 'none';
+            }
+
+            // Show the clicked page
+            document.getElementById(name + 'Page').style.display = 'block';
+        }
+
+        function toggleGallery(name) {
+            var checkbox = document.getElementById(name + 'Checkbox');
+            var gallery = document.getElementById(name + 'Gallery');
+
+            // Show or hide the gallery based on the checkbox
+            if (checkbox.checked) {
+                gallery.style.display = 'block';
+            } else {
+                gallery.style.display = 'none';
+            }
+        }
+        function changeImage(galleryId, direction) {
+            var gallery = document.getElementById(galleryId);
+            var images = gallery.getElementsByTagName('img');
+            var currentImage = 0;
+
+            // Find the current image
+            for (var i = 0; i < images.length; i++) {
+                if (images[i].style.display !== 'none') {
+                    currentImage = i;
+                    break;
+                }
+            }
+
+            // Hide the current image
+            images[currentImage].style.display = 'none';
+
+            // Calculate the index of the new image
+            var newImage = currentImage + direction;
+            if (newImage < 0) {
+                newImage = images.length - 1;
+            } else if (newImage >= images.length) {
+                newImage = 0;
+            }
+
+            // Show the new image
+            images[newImage].style.display = 'block';
+        }
+        // Show the first image when the page loads
+        window.onload = function() {
+            var galleries = document.getElementsByClassName('gallery');
+            for (var i = 0; i < galleries.length; i++) {
+                var images = galleries[i].getElementsByTagName('img');
+                if (images.length > 0) {
+                    images[0].style.display = 'block';
+                }
+            }
+        };
+
+       
+
+
+    </script>
+</head>
+<body>
+    <div id="mainPage" class="page">
+        <div class="tile" onclick="loadPage('Moiez')">Moiez</div>
+        <div class="tile" onclick="loadPage('Sana')">Sana</div>
+    </div>
+    <div id="MoiezPage" class="page" style="display: none;">
+        <div class="back-arrow" onclick="loadPage('main')">&#8592;</div>
+        <div class="container">
+            <h1>Moiez</h1>
+            <input type="checkbox" id="HoodieCheckbox" onclick="toggleGallery('Hoodie')"> Hoodie/Sweater<br>
+            <input type="checkbox" id="ShirtCheckbox" onclick="toggleGallery('Shirt')"> Shirt<br>
+            <input type="checkbox" id="PantsCheckbox" onclick="toggleGallery('Pants')"> Pants<br>
+            <input type="checkbox" id="ShoesCheckbox" onclick="toggleGallery('Shoes')"> Shoes<br>
+            <div id="HoodieGallery" class="box" style="display: none;">
+                <h2>Hoodie/Sweater</h2>
+                <div class="gallery">
+                    <img src="hoodie1.png" alt="Hoodie 1">
+                    <img src="hoodie2.png" alt="Hoodie 2" style="display: none;">
+                    <img src="hoodie3.png" alt="Hoodie 3" style="display: none;">
+                    <img src="hoodie4.png" alt="Hoodie 4" style="display: none;">
+                    <!-- Add more images here -->
+                    <button class="arrow left" onclick="changeImage('HoodieGallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('HoodieGallery', 1)">→</button>
+                </div>
+            </div>
+            
+            <div id="ShirtGallery" class="box" style="display: none;">
+                <h2>Shirt</h2>
+                <div class="gallery">
+                    <img src="shirt1.png" alt="Shirt 1">
+                    <img src="shirt2.png" alt="Shirt 2">
+                    <button class="arrow left" onclick="changeImage('ShirtGallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('ShirtGallery', 1)">→</button>
+
+                    <!-- Add more images here -->
+                </div>
+            </div>
+            <div id="PantsGallery" class="box" style="display: none;">
+                <h2>Pants</h2>
+                <div class="gallery">
+                    <img src="pants1.png" alt="Pants 1">
+                    <img src="pants2.png" alt="Pants 2">
+                    <button class="arrow left" onclick="changeImage('PantsGallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('PantsGallery', 1)">→</button>
+
+                    <!-- Add more images here -->
+                </div>      
+            </div>
+            <div id="ShoesGallery" class="box" style="display: none;">
+                <h2>Shoes</h2>
+                <div class="gallery">
+                    <img src="shoes1.png" alt="Shoes 1">
+                    <img src="shoes2.png" alt="Shoes 2">
+                    <button class="arrow left" onclick="changeImage('ShoesGallery', -1)">←</button>
+                    <button class="arrow right" onclick="changeImage('ShoesGallery', 1)">→</button>
+
+                    <!-- Add more images here -->
+                </div>  
+            </div>
+        </div>
+    </div>
+    <!-- Add other pages here -->
+    
+    <!-- Add other pages here -->
+    
+</body>
+</html>
